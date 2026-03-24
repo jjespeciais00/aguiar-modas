@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Página não encontrada — Aguiar Modas</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23C8102E'/><text x='50' y='72' text-anchor='middle' fill='white' font-size='60'>🛍️</text></svg>"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #FAF6F1;
+    color: #1A1008;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .error-container {
+    position: relative;
+    z-index: 1;
+    max-width: 520px;
+  }
+  .error-code {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: clamp(120px, 20vw, 200px);
+    line-height: 1;
+    background: linear-gradient(135deg, #C8102E 0%, #8B0A1E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+    letter-spacing: -4px;
+  }
+  .error-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #1A1008;
+  }
+  .error-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #6B5E52;
+    margin-bottom: 32px;
+  }
+  .error-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    background: #C8102E;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(200, 16, 46, 0.3);
+  }
+  .error-btn:hover {
+    background: #a00d24;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(200, 16, 46, 0.4);
+  }
+  .error-btn svg {
+    transition: transform 0.3s;
+  }
+  .error-btn:hover svg {
+    transform: translateX(-3px);
+  }
+  .error-logo {
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+  }
+  .error-logo-circle {
+    width: 44px;
+    height: 44px;
+    background: #C8102E;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+  }
+  .error-logo-text {
+    text-align: left;
+  }
+  .error-logo-text strong {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .error-logo-text span {
+    font-size: 10px;
+    color: #6B5E52;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .bg-shapes {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .bg-shapes div {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.04;
+    background: #C8102E;
+  }
+  .bg-shapes div:nth-child(1) { width: 400px; height: 400px; top: -100px; right: -100px; }
+  .bg-shapes div:nth-child(2) { width: 300px; height: 300px; bottom: -80px; left: -80px; }
+  .bg-shapes div:nth-child(3) { width: 200px; height: 200px; top: 40%; left: 60%; opacity: 0.02; }
+  .secondary-links {
+    margin-top: 24px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .secondary-links a {
+    font-size: 13px;
+    color: #6B5E52;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .secondary-links a:hover { color: #C8102E; }
+</style>
+</head>
+<body>
+  <div class="bg-shapes"><div></div><div></div><div></div></div>
+  <div class="error-container">
+    <div class="error-logo">
+      <div class="error-logo-circle">AM</div>
+      <div class="error-logo-text">
+        <strong>Aguiar Modas</strong>
+        <span>Moda para toda família</span>
+      </div>
+    </div>
+    <div class="error-code">404</div>
+    <h1 class="error-title">Ops! Página não encontrada</h1>
+    <p class="error-text">
+      Parece que esta página saiu de moda. 😄<br/>
+      Não se preocupe, temos muitas outras peças incríveis esperando por você!
+    </p>
+    <a href="/" class="error-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Voltar à página inicial
+    </a>
+    <div class="secondary-links">
+      <a href="https://wa.me/5511940379082">WhatsApp</a>
+      <a href="https://instagram.com/aguiarmodas">Instagram</a>
+    </div>
+  </div>
+</body>
+</html>
