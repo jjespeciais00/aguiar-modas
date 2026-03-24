@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aguiar-modas.vercel.app/sitemap.xml
