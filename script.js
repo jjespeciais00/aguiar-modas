@@ -98,15 +98,15 @@ function renderProductCard(p, delay) {
       '<img class="cat-prod-img" src="' + p.image + '" alt="' + p.name + '" loading="lazy"/>' +
       (p.hoverImage ? '<img class="cat-prod-img-hover" src="' + p.hoverImage + '" alt="' + p.name + ' - alternativa" loading="lazy"/>' : '') +
       badgeHTML +
-      '<a href="https://wa.me/5511940379082?text=' + waMsg + '" target="_blank" class="cat-prod-wa" aria-label="WhatsApp - ' + p.name + '">' +
-        '<svg width="17" height="17" fill="#25D366"><use href="#wa-icon"/></svg>' +
-      '</a>' +
+      '<button class="cat-prod-wa" aria-label="Ver ' + p.name + '" onclick="event.stopPropagation(); window.openModal(\'' + p.id + '\')" style="background:var(--red); color:#fff; border:none; display:flex;align-items:center;justify-content:center;">' +
+        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>' +
+      '</button>' +
     '</div>' +
     '<div class="cat-prod-info">' +
       '<div class="cat-prod-tag">' + p.tag + '</div>' +
       '<div class="cat-prod-name">' + p.name + '</div>' +
       '<div class="cat-prod-price-hint">A partir de ' + p.price + '</div>' +
-      '<div class="cat-prod-cta">Consultar preço <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>' +
+      '<button class="cat-prod-cta" onclick="window.openModal(\'' + p.id + '\')" style="background:none;border:none;cursor:pointer;padding:0;width:100%;text-align:left;">Comprar Agora <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>' +
     '</div>' +
   '</div>';
 }
@@ -258,3 +258,216 @@ function rejectCookies() {
   banner.classList.remove('visible');
   setTimeout(() => banner.classList.add('hidden'), 500);
 }
+
+
+// ═══════ E-COMMERCE LOGIC ═══════
+
+// --- PWA Service Worker ---
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js')
+      .catch(err => console.log('SW Registration failed: ', err));
+  });
+}
+
+// --- State ---
+let cart = JSON.parse(localStorage.getItem('am_cart')) || [];
+let activeModalProduct = null;
+let activeModalSize = 'G';
+
+function saveCart() {
+  localStorage.setItem('am_cart', JSON.stringify(cart));
+  updateCartBadge();
+  renderCart();
+}
+
+// --- Cart Sidebar ---
+function toggleCart() {
+  const sidebar = document.getElementById('cartSidebar');
+  const overlay = document.getElementById('cartOverlay');
+  const isActive = sidebar.classList.contains('active');
+  
+  if (isActive) {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  } else {
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    renderCart();
+  }
+}
+
+function updateCartBadge() {
+  const badge = document.getElementById('cartBadge');
+  const btn = document.querySelector('.nav-cart-btn');
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  badge.textContent = totalItems;
+  
+  if (totalItems > 0) {
+    btn.classList.add('bump');
+    setTimeout(() => btn.classList.remove('bump'), 300);
+  }
+}
+
+// Parse "R$ 49,90" into numeric 49.90
+function parsePrice(priceStr) {
+  if (!priceStr) return 0;
+  return parseFloat(priceStr.replace(/[R$\s]/g, '').replace(',', '.'));
+}
+function formatPrice(num) {
+  return 'R$ ' + num.toFixed(2).replace('.', ',');
+}
+
+function renderCart() {
+  const container = document.getElementById('cartItems');
+  const totalEl = document.getElementById('cartTotal');
+  
+  if (cart.length === 0) {
+    container.innerHTML = `
+      <div class="cart-empty">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <p>Sua sacola está vazia.</p>
+        <button onclick="toggleCart()" style="padding:10px 20px; background:var(--red); color:#fff; border:none; border-radius:100px; cursor:pointer; font-weight:600">Continuar Comprando</button>
+      </div>`;
+    totalEl.textContent = 'R$ 0,00';
+    return;
+  }
+  
+  let total = 0;
+  container.innerHTML = cart.map((item, index) => {
+    const itemTotal = parsePrice(item.price) * item.quantity;
+    total += itemTotal;
+    return `
+      <div class="cart-item">
+        <img src="${item.image}" class="cart-item-img" alt="${item.name}">
+        <div class="cart-item-details">
+          <div>
+            <div class="cart-item-title">${item.name}</div>
+            <div class="cart-item-meta">Tamanho: ${item.size}</div>
+          </div>
+          <div class="cart-item-bottom">
+            <div class="cart-item-price">${formatPrice(itemTotal)}</div>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="updateQty(${index}, -1)">–</button>
+              <div class="qty-val">${item.quantity}</div>
+              <button class="qty-btn" onclick="updateQty(${index}, 1)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+  
+  totalEl.textContent = formatPrice(total);
+}
+
+function updateQty(index, change) {
+  cart[index].quantity += change;
+  if (cart[index].quantity <= 0) {
+    cart.splice(index, 1);
+  }
+  saveCart();
+}
+
+// --- Quick View Modal ---
+window.openModal = function(productId) {
+  const p = allProducts.find(item => item.id === productId);
+  if (!p) return;
+  activeModalProduct = p;
+  
+  document.getElementById('modalImg').src = p.image;
+  document.getElementById('modalTag').textContent = p.tag;
+  document.getElementById('modalName').textContent = p.name;
+  document.getElementById('modalPrice').textContent = p.price;
+  
+  // reset sizes
+  document.querySelectorAll('.size-btn').forEach(b => {
+    b.classList.remove('active');
+    if (b.textContent === 'G') {
+      b.classList.add('active');
+      activeModalSize = 'G';
+    }
+  });
+
+  document.getElementById('quickModalOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+window.closeModal = function(event) {
+  if (event && event.target.id !== 'quickModalOverlay') return;
+  document.getElementById('quickModalOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+window.selectSize = function(btn, size) {
+  document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeModalSize = size;
+}
+
+window.addToCartFromModal = function() {
+  if (!activeModalProduct) return;
+  
+  const existing = cart.find(i => i.id === activeModalProduct.id && i.size === activeModalSize);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({
+      id: activeModalProduct.id,
+      name: activeModalProduct.name,
+      price: activeModalProduct.price,
+      image: activeModalProduct.image,
+      size: activeModalSize,
+      quantity: 1
+    });
+  }
+  
+  saveCart();
+  closeModal();
+  showToast(`${activeModalProduct.name} adicionado à sacola!`);
+}
+
+// --- Toasts ---
+function showToast(msg) {
+  const container = document.getElementById('toastContainer');
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.innerHTML = `
+    <div class="toast-icon">✓</div>
+    <div>${msg}</div>
+  `;
+  container.appendChild(toast);
+  
+  // Trigger reflow
+  toast.offsetHeight;
+  toast.classList.add('show');
+  
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 400);
+  }, 3000);
+}
+
+// --- WhatsApp Checkout ---
+window.checkout = function() {
+  if (cart.length === 0) return;
+  
+  let msg = "Olá! Gostaria de finalizar meu pedido:\n\n";
+  let total = 0;
+  
+  cart.forEach((item, i) => {
+    const itemTotal = parsePrice(item.price) * item.quantity;
+    total += itemTotal;
+    msg += `*${item.quantity}x* ${item.name} (Tamanho: ${item.size}) - ${formatPrice(itemTotal)}\n`;
+  });
+  
+  msg += `\n*TOTAL: ${formatPrice(total)}*\n\nAguardo o envio do link de pagamento.`;
+  
+  const url = `https://wa.me/5511940379082?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+}
+
+// Init badge on load
+document.addEventListener('DOMContentLoaded', updateCartBadge);
