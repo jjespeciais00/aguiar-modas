@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Aguiar Modas — Moda feminina, masculina, infantil e calçados para toda a família. 5 lojas em São Paulo, preço justo e qualidade garantida há mais de 16 anos."/>
+<meta name="keywords" content="moda feminina, moda masculina, moda infantil, calçados, roupas, São Paulo, Aguiar Modas, loja de roupas, preço justo"/>
+<meta name="author" content="Lojas Aguiar Modas"/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#C8102E"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23C8102E'/><text x='50' y='65' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold' font-size='40'>AM</text></svg>"/>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Lojas Aguiar Modas — Moda para toda família"/>
+<meta property="og:description" content="Roupas femininas, masculinas, infantis e calçados com qualidade e preço justo. 5 lojas em São Paulo. Atendimento pelo WhatsApp!"/>
+<meta property="og:url" content="https://aguiarmodas.com.br"/>
+<meta property="og:site_name" content="Aguiar Modas"/>
+<meta property="og:locale" content="pt_BR"/>
+<meta property="og:image" content="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1200&q=80"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Lojas Aguiar Modas — Moda para toda família"/>
+<meta name="twitter:description" content="Roupas e calçados para toda a família com qualidade e preço justo. 5 lojas em São Paulo!"/>
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1200&q=80"/>
+<title>Lojas Aguiar Modas — Moda para toda família</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --red:#C8102E;
+  --red-dark:#9E0B22;
+  --red-light:#E8314E;
+  --red-pale:#FFF0F2;
+  --red-pale2:#FFE0E5;
+  --cream:#FAF8F5;
+  --cream2:#F2EEE8;
+  --dark:#1A1008;
+  --dark2:#2D2118;
+  --text:#4A3728;
+  --muted:#8A7060;
+  --muted2:#B8A898;
+  --white:#FFFFFF;
+  --border:#E8DDD5;
+  --border2:#D5C8BC;
+}
+html{scroll-behavior:smooth;scroll-padding-top:108px}
+body{background:var(--cream);color:var(--dark);font-family:'Plus Jakarta Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--cream2)}
+::-webkit-scrollbar-thumb{background:var(--red);border-radius:3px}
+::selection{background:var(--red);color:#fff}
+a{text-decoration:none;color:inherit}
+
+/* PAGE SYSTEM */
+.page{display:none}
+.page.active{display:block}
+#page-home{display:block}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:var(--white);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 4px 32px rgba(26,16,8,.08)}
+.nav-top{background:var(--red);padding:7px clamp(16px,4vw,48px);display:flex;align-items:center;justify-content:space-between}
+.nav-top-text{font-size:12px;color:rgba(255,255,255,.85);font-weight:500;letter-spacing:.03em}
+.nav-top-wa{display:flex;align-items:center;gap:6px;color:#fff;font-size:12px;font-weight:600;opacity:.9;transition:opacity .2s}
+.nav-top-wa:hover{opacity:1}
+.nav-main{max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,48px);display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{display:flex;align-items:center;gap:12px;cursor:pointer}
+.logo-circle{width:42px;height:42px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-circle span{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:#fff;letter-spacing:.05em}
+.logo-info p:first-child{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;color:var(--dark);letter-spacing:.05em;line-height:1}
+.logo-info p:last-child{font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.nav-links{display:flex;gap:4px;list-style:none;align-items:center}
+.nav-links a,.nav-links button{color:var(--text);font-size:13px;font-weight:500;transition:all .2s;position:relative;background:none;border:none;cursor:pointer;padding:6px 12px;border-radius:6px;font-family:'Plus Jakarta Sans',sans-serif;display:flex;align-items:center;gap:5px}
+.nav-links a:hover,.nav-links button:hover{color:var(--red);background:var(--red-pale)}
+.nav-links button.active{color:var(--red);background:var(--red-pale);font-weight:600}
+.nav-links button svg{transition:transform .2s}
+.nav-dropdown{position:relative}
+.nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;background:var(--white);border:1px solid var(--border);box-shadow:0 12px 40px rgba(26,16,8,.12);min-width:180px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .25s;z-index:100}
+.dropdown-item{display:flex;align-items:center;gap:10px;padding:11px 16px;color:var(--text);font-size:13px;font-weight:500;transition:all .2s;cursor:pointer;border:none;background:none;width:100%;font-family:'Plus Jakarta Sans',sans-serif}
+.dropdown-item:hover{color:var(--red);background:var(--red-pale)}
+.dropdown-item svg{color:var(--muted2);flex-shrink:0}
+.nav-btn{display:flex;align-items:center;gap:8px;background:var(--red);color:#fff;font-weight:700;font-size:13px;padding:11px 22px;border-radius:100px;transition:all .25s;white-space:nowrap;flex-shrink:0}
+.nav-btn:hover{background:var(--red-dark);box-shadow:0 6px 24px rgba(200,16,46,.3)}
+@media(max-width:860px){.nav-links{display:none}}
+@media(max-width:600px){.nav-top-text{display:none}}
+
+/* CATALOG PAGE HEADER */
+.catalog-page-header{padding:clamp(32px,5vw,56px) clamp(16px,4vw,48px) 0;max-width:1280px;margin:0 auto}
+.catalog-breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-bottom:20px}
+.catalog-breadcrumb a,.catalog-breadcrumb button{color:var(--muted);transition:color .2s;background:none;border:none;cursor:pointer;font-size:12px;font-family:'Plus Jakarta Sans',sans-serif}
+.catalog-breadcrumb a:hover,.catalog-breadcrumb button:hover{color:var(--red)}
+.catalog-breadcrumb span{color:var(--muted2)}
+.catalog-page-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.5rem);line-height:.93;letter-spacing:-.01em;color:var(--dark);margin-bottom:8px}
+.catalog-page-sub{color:var(--muted);font-size:15px;margin-bottom:32px}
+.catalog-page-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px;padding-bottom:32px;border-bottom:1px solid var(--border)}
+.catalog-filter-btn{font-size:12px;font-weight:600;padding:8px 18px;border:1.5px solid var(--border2);color:var(--muted);background:transparent;cursor:pointer;border-radius:100px;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif}
+.catalog-filter-btn.active,.catalog-filter-btn:hover{border-color:var(--red);color:var(--red);background:var(--red-pale)}
+
+/* CATALOG PRODUCTS GRID */
+.catalog-products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:0 clamp(16px,4vw,48px);max-width:1280px;margin:0 auto;padding-bottom:80px}
+@media(max-width:1024px){.catalog-products-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.catalog-products-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:400px){.catalog-products-grid{grid-template-columns:1fr}}
+.cat-prod-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .3s}
+.cat-prod-card:hover{box-shadow:0 16px 40px rgba(26,16,8,.1);transform:translateY(-4px)}
+.cat-prod-img-wrap{position:relative;overflow:hidden;height:260px}
+.cat-prod-img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.cat-prod-card:hover .cat-prod-img{transform:scale(1.06)}
+.cat-prod-badge{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:100px;letter-spacing:.05em}
+.cat-prod-badge.promo{background:#E67E22}
+.cat-prod-badge.novo{background:var(--red)}
+.cat-prod-badge.dest{background:#2C7A2C}
+.cat-prod-wa{position:absolute;bottom:12px;right:12px;width:40px;height:40px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.15);opacity:0;transform:translateY(8px);transition:all .3s}
+.cat-prod-card:hover .cat-prod-wa{opacity:1;transform:translateY(0)}
+.cat-prod-info{padding:16px}
+.cat-prod-tag{font-size:10px;color:var(--muted);font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px}
+.cat-prod-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;color:var(--dark);margin-bottom:10px}
+.cat-prod-cta{display:flex;align-items:center;gap:6px;color:var(--red);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.reveal.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}.d4{transition-delay:.38s}
+
+/* ── HOME PAGE STYLES ── */
+.hero{min-height:100vh;background:var(--dark);position:relative;overflow:hidden;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.35;object-position:center top}
+.hero-gradient{position:absolute;inset:0;background:linear-gradient(105deg,rgba(26,16,8,.97) 45%,rgba(26,16,8,.4) 100%)}
+.hero-gradient2{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(26,16,8,.9) 100%)}
+.hero-red-shape{position:absolute;top:-120px;right:-120px;width:600px;height:600px;background:var(--red);border-radius:50%;opacity:.07;filter:blur(80px);pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:120px clamp(16px,4vw,48px) 80px;width:100%}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(200,16,46,.15);border:1px solid rgba(200,16,46,.3);padding:6px 16px;border-radius:100px;margin-bottom:28px;opacity:0;animation:up .7s .1s ease forwards}
+.hero-eyebrow span{font-size:11px;color:rgba(255,255,255,.8);font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--red-light);animation:pulse-dot 2s infinite}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(3.5rem,9vw,8rem);line-height:.9;letter-spacing:-.01em;color:#fff;margin-bottom:12px;opacity:0;animation:up .7s .25s ease forwards}
+.hero-title .red-stroke{-webkit-text-stroke:2px var(--red);color:transparent}
+.hero-title .red-fill{color:var(--red)}
+.hero-slogan{font-family:'Playfair Display',sans-serif;font-style:italic;font-size:clamp(1.1rem,2.5vw,1.6rem);color:rgba(255,255,255,.5);margin-bottom:32px;opacity:0;animation:up .7s .4s ease forwards}
+.hero-slogan em{color:rgba(255,255,255,.8);font-style:normal}
+.hero-desc{color:rgba(255,255,255,.55);font-size:clamp(14px,1.5vw,16px);line-height:1.8;max-width:480px;margin-bottom:44px;opacity:0;animation:up .7s .55s ease forwards}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:up .7s .7s ease forwards}
+.btn-red{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;font-weight:700;font-size:15px;padding:16px 32px;border-radius:100px;transition:all .25s}
+.btn-red:hover{background:var(--red-light);box-shadow:0 12px 40px rgba(200,16,46,.4);transform:translateY(-2px)}
+.btn-ghost-white{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.7);font-size:15px;font-weight:500;padding:16px 24px;border:1px solid rgba(255,255,255,.15);border-radius:100px;transition:all .25s}
+.btn-ghost-white:hover{color:#fff;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.05)}
+.hero-badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:64px;opacity:0;animation:up .7s .85s ease forwards}
+.hero-badge{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:14px 20px;border-radius:12px;backdrop-filter:blur(8px)}
+.hb-icon{width:36px;height:36px;background:rgba(200,16,46,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hb-num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;color:#fff;line-height:1}
+.hb-label{font-size:11px;color:rgba(255,255,255,.5);font-weight:500;margin-top:1px}
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+.marquee-section{background:var(--red);padding:14px 0;overflow:hidden}
+.marquee-track{display:flex;gap:0;width:max-content;animation:scroll 22s linear infinite}
+.m-item{display:flex;align-items:center;gap:14px;padding:0 28px;color:rgba(255,255,255,.7);font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap}
+.m-star{color:rgba(255,255,255,.4);font-size:8px}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.section{padding:clamp(72px,10vw,120px) clamp(16px,4vw,48px)}
+.section-inner{max-width:1280px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red-pale);border:1px solid var(--red-pale2);color:var(--red);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:20px}
+.tag-dot{width:5px;height:5px;border-radius:50%;background:var(--red)}
+.section-h{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.2rem,5vw,4rem);line-height:.93;letter-spacing:-.01em;color:var(--dark);margin-bottom:14px}
+.section-h .light{color:var(--muted2);font-style:normal}
+.section-p{color:var(--muted);font-size:15px;line-height:1.75;max-width:540px}
+
+/* CATEGORIES */
+.categories-section{background:var(--white)}
+.cats-header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+.cats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:900px){.cats-grid{grid-template-columns:repeat(2,1fr)}}
+.cat-card{position:relative;border-radius:16px;overflow:hidden;cursor:pointer}
+.cat-card:first-child{grid-row:span 2}
+.cat-img{width:100%;height:220px;object-fit:cover;transition:transform .5s ease,filter .5s ease;filter:saturate(.9)}
+.cat-card:first-child .cat-img{height:100%;min-height:460px}
+.cat-card:hover .cat-img{transform:scale(1.06);filter:saturate(1.1)}
+.cat-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(26,16,8,.85) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px}
+.cat-label{font-size:10px;color:rgba(255,255,255,.6);font-weight:600;letter-spacing:.15em;text-transform:uppercase;margin-bottom:5px}
+.cat-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.4rem;color:#fff;letter-spacing:.02em}
+.cat-sub{font-size:12px;color:rgba(255,255,255,.5);margin-top:3px}
+.cat-arrow{position:absolute;top:16px;right:16px;width:36px;height:36px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;opacity:0;transform:scale(.8);transition:all .3s;backdrop-filter:blur(4px)}
+.cat-card:hover .cat-arrow{opacity:1;transform:scale(1)}
+
+/* FEATURED PRODUCTS */
+.catalog-section{background:var(--cream2);padding:80px clamp(16px,4vw,48px)}
+.catalog-inner{max-width:1280px;margin:0 auto}
+.catalog-header{text-align:center;margin-bottom:48px}
+.catalog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:900px){.catalog-grid{grid-template-columns:repeat(2,1fr)}}
+.prod-card{background:var(--white);border-radius:12px;overflow:hidden;transition:all .3s;border:1px solid var(--border)}
+.prod-card:hover{box-shadow:0 16px 40px rgba(26,16,8,.1);transform:translateY(-4px)}
+.prod-img-wrap{position:relative;overflow:hidden;height:220px}
+.prod-img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.prod-card:hover .prod-img{transform:scale(1.05)}
+.prod-badge{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:100px;letter-spacing:.05em}
+.prod-wa{position:absolute;bottom:12px;right:12px;width:38px;height:38px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.15);opacity:0;transform:translateY(8px);transition:all .3s}
+.prod-card:hover .prod-wa{opacity:1;transform:translateY(0)}
+.prod-info{padding:16px}
+.prod-category{font-size:10px;color:var(--muted);font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px}
+.prod-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;color:var(--dark);margin-bottom:8px}
+.prod-cta{display:flex;align-items:center;gap:6px;color:var(--red);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+
+/* STORES */
+.stores-section{background:var(--dark);padding:clamp(72px,10vw,120px) clamp(16px,4vw,48px)}
+.stores-inner{max-width:1280px;margin:0 auto}
+.stores-header{text-align:center;margin-bottom:56px}
+.stores-header .tag{background:rgba(200,16,46,.15);border-color:rgba(200,16,46,.3);color:var(--red-light)}
+.stores-header .section-h{color:#fff}
+.stores-header .section-p{color:rgba(255,255,255,.4);margin:0 auto}
+.stores-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:860px){.stores-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.stores-grid{grid-template-columns:1fr}}
+.store-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;transition:all .3s;position:relative;overflow:hidden}
+.store-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.store-card:hover{background:rgba(255,255,255,.07);border-color:rgba(200,16,46,.3)}
+.store-card:hover::before{transform:scaleX(1)}
+.store-num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:3rem;color:rgba(200,16,46,.15);line-height:1;margin-bottom:16px;transition:color .3s}
+.store-card:hover .store-num{color:rgba(200,16,46,.3)}
+.store-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.15rem;color:#fff;margin-bottom:16px;letter-spacing:.03em}
+.store-info{display:flex;flex-direction:column;gap:10px}
+.store-row{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.45);font-size:13px;line-height:1.4}
+.store-row svg{flex-shrink:0;margin-top:1px;color:var(--red);opacity:.7}
+.store-wa-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(200,16,46,.12);border:1px solid rgba(200,16,46,.25);color:rgba(255,255,255,.7);font-size:13px;font-weight:600;padding:12px;border-radius:8px;margin-top:20px;transition:all .3s;cursor:pointer;width:100%;font-family:'Plus Jakarta Sans',sans-serif}
+.store-wa-btn:hover{background:var(--red);color:#fff;border-color:var(--red)}
+.stores-row2{margin-top:16px;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:540px){.stores-row2{grid-template-columns:1fr}}
+
+/* ABOUT */
+.about-section{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:48px}}
+.about-imgs{position:relative;height:560px}
+.about-img-main{position:absolute;top:0;left:0;width:72%;height:440px;border-radius:16px;overflow:hidden;box-shadow:0 24px 60px rgba(26,16,8,.15)}
+.about-img-main img{width:100%;height:100%;object-fit:cover}
+.about-img-secondary{position:absolute;bottom:0;right:0;width:54%;height:280px;border-radius:16px;overflow:hidden;border:4px solid var(--white);box-shadow:0 16px 40px rgba(26,16,8,.12)}
+.about-img-secondary img{width:100%;height:100%;object-fit:cover}
+.about-stat-card{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--red);color:#fff;padding:20px 24px;border-radius:12px;text-align:center;box-shadow:0 12px 32px rgba(200,16,46,.35);z-index:3;white-space:nowrap}
+.asc-num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.5rem;line-height:1}
+.asc-label{font-size:11px;opacity:.8;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+.about-content h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.2rem);line-height:.95;letter-spacing:-.01em;color:var(--dark);margin-bottom:20px}
+.about-content p{color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:14px}
+.about-content p strong{color:var(--dark);font-weight:600}
+.about-values{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.about-val{display:flex;align-items:center;gap:10px;padding:14px;background:var(--cream);border-radius:10px;border:1px solid var(--border)}
+.val-icon{width:32px;height:32px;background:var(--red-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.val-text{font-size:13px;font-weight:600;color:var(--text)}
+
+/* CTA */
+.cta-section{background:var(--red);padding:80px clamp(16px,4vw,48px);position:relative;overflow:hidden}
+.cta-bg-circle{position:absolute;border-radius:50%;background:rgba(255,255,255,.05)}
+.cta-bg-circle.c1{width:500px;height:500px;top:-200px;right:-100px}
+.cta-bg-circle.c2{width:300px;height:300px;bottom:-150px;left:-50px}
+.cta-inner{max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.cta-inner h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.4rem,6vw,5rem);line-height:.9;color:#fff;letter-spacing:-.01em;margin-bottom:16px}
+.cta-inner h2 span{color:rgba(255,255,255,.4);-webkit-text-stroke:1px rgba(255,255,255,.3)}
+.cta-inner p{color:rgba(255,255,255,.7);font-size:16px;line-height:1.7;max-width:480px;margin:0 auto 40px}
+.btn-white{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--red);font-weight:700;font-size:15px;padding:17px 36px;border-radius:100px;transition:all .25s;box-shadow:0 8px 32px rgba(0,0,0,.15)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 16px 48px rgba(0,0,0,.2)}
+
+/* FOOTER */
+footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,.06);padding:60px clamp(16px,4vw,48px) 32px}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:540px){.footer-grid{grid-template-columns:1fr;gap:28px}}
+.footer-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.footer-logo-circle{width:40px;height:40px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.footer-logo-circle span{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:#fff}
+.footer-logo-info p:first-child{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;color:#fff;letter-spacing:.05em;line-height:1}
+.footer-logo-info p:last-child{font-size:10px;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase}
+.footer-desc{color:rgba(255,255,255,.35);font-size:13px;line-height:1.7;margin-bottom:20px}
+.footer-slogan{font-family:'Playfair Display',sans-serif;font-style:italic;font-size:14px;color:rgba(255,255,255,.25)}
+.footer-h{color:rgba(255,255,255,.6);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a,.footer-links button{color:rgba(255,255,255,.35);font-size:13px;transition:color .2s;background:none;border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;text-align:left;padding:0}
+.footer-links a:hover,.footer-links button:hover{color:rgba(255,255,255,.7)}
+.footer-addr{display:flex;flex-direction:column;gap:8px}
+.footer-addr-item{display:flex;align-items:flex-start;gap:8px;color:rgba(255,255,255,.35);font-size:12px;line-height:1.4}
+.footer-addr-item svg{flex-shrink:0;color:var(--red);opacity:.6;margin-top:1px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-copy{color:rgba(255,255,255,.2);font-size:11px;letter-spacing:.05em}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.wa-tip{background:var(--dark);color:#fff;font-size:12px;font-weight:600;padding:8px 14px;border-radius:8px;opacity:0;transform:translateY(6px);transition:all .25s;pointer-events:none;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.wa-float:hover .wa-tip{opacity:1;transform:translateY(0)}
+.wa-circle{width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.4);transition:all .25s;cursor:pointer;text-decoration:none}
+.wa-circle:hover{transform:scale(1.1);background:#1dac55}
+.wa-ring{position:absolute;width:58px;height:58px;border-radius:50%;background:#25D366;animation:wa-pulse 2.5s infinite;opacity:0}
+.wa-pos{position:relative}
+@keyframes wa-pulse{0%{transform:scale(1);opacity:.4}100%{transform:scale(1.8);opacity:0}}
+
+/* WA SVG reuse */
+.wa-svg-path{fill-rule:evenodd}
+
+/* HAMBURGER MENU */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;z-index:600}
+.hamburger span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:860px){
+  .hamburger{display:flex}
+  .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--white);flex-direction:column;align-items:center;justify-content:center;gap:8px;z-index:550;padding:80px 24px 24px}
+  .nav-links.mobile-open{display:flex}
+  .nav-links a,.nav-links button{font-size:18px;padding:14px 24px}
+  .nav-dropdown .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;min-width:auto;background:var(--cream)}
+  .nav-dropdown .dropdown-menu .dropdown-item{justify-content:center}
+  .nav-btn{display:none}
+}
+@media(max-width:860px){
+  .nav-links.mobile-open ~ .nav-btn{display:none}
+}
+
+/* SMOOTH FILTER ANIMATION */
+.cat-prod-card{transition:all .4s ease,opacity .4s ease,transform .4s ease,max-height .4s ease}
+.cat-prod-card.filtered-out{opacity:0;transform:scale(.95);pointer-events:none;position:absolute;visibility:hidden}
+
+/* TESTIMONIALS */
+.testimonials-section{background:var(--white);padding:clamp(72px,10vw,100px) clamp(16px,4vw,48px);overflow:hidden}
+.testimonials-inner{max-width:1280px;margin:0 auto}
+.testimonials-header{text-align:center;margin-bottom:48px}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:860px){.testimonials-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.testimonials-grid{grid-template-columns:1fr}}
+.testimonial-card{background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:28px;position:relative;transition:all .3s}
+.testimonial-card:hover{box-shadow:0 12px 36px rgba(26,16,8,.08);transform:translateY(-3px)}
+.testimonial-card::before{content:'\201C';position:absolute;top:16px;right:24px;font-family:'Playfair Display',serif;font-size:4rem;color:var(--red-pale2);line-height:1;pointer-events:none}
+.testimonial-stars{display:flex;gap:2px;margin-bottom:14px}
+.testimonial-stars svg{color:#F59E0B}
+.testimonial-text{color:var(--text);font-size:14px;line-height:1.75;margin-bottom:20px;font-style:italic}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.testimonial-avatar{width:42px;height:42px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;flex-shrink:0}
+.testimonial-name{font-weight:700;font-size:13px;color:var(--dark)}
+.testimonial-loc{font-size:11px;color:var(--muted);margin-top:1px}
+
+/* PAYMENT / WHY CHOOSE US */
+.benefits-strip{background:var(--cream2);padding:48px clamp(16px,4vw,48px);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.benefits-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:860px){.benefits-inner{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.benefits-inner{grid-template-columns:1fr}}
+.benefit-item{display:flex;align-items:center;gap:14px;padding:16px;background:var(--white);border-radius:12px;border:1px solid var(--border);transition:all .3s}
+.benefit-item:hover{box-shadow:0 8px 24px rgba(26,16,8,.06);transform:translateY(-2px)}
+.benefit-icon{width:44px;height:44px;background:var(--red-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.benefit-icon svg{color:var(--red)}
+.benefit-label{font-size:13px;font-weight:700;color:var(--dark);line-height:1.3}
+.benefit-sub{font-size:11px;color:var(--muted);margin-top:2px;font-weight:400}
+
+/* PRICE HINT */
+.prod-price-hint{font-size:12px;color:var(--red-dark);font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:4px}
+.prod-price-hint small{font-weight:400;color:var(--muted);font-size:10px}
+.cat-prod-price-hint{font-size:12px;color:var(--red-dark);font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:4px}
+.cat-prod-price-hint small{font-weight:400;color:var(--muted);font-size:10px}
+
+/* BACK TO TOP */
+.back-to-top{position:fixed;bottom:24px;left:24px;z-index:998;width:44px;height:44px;background:var(--dark);color:#fff;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:translateY(12px);transition:all .3s;box-shadow:0 4px 16px rgba(26,16,8,.25)}
+.back-to-top.visible{opacity:1;visibility:visible;transform:none}
+.back-to-top:hover{background:var(--red);box-shadow:0 8px 24px rgba(200,16,46,.3);transform:translateY(-2px)}
+
+/* SKELETON LOADING */
+.skeleton{position:relative;overflow:hidden;background:var(--cream2);border-radius:8px}
+.skeleton::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);animation:skeleton-shimmer 1.5s infinite}
+@keyframes skeleton-shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.prod-img.skeleton-img,.cat-prod-img.skeleton-img{background:var(--cream2);color:transparent}
+img{background:var(--cream2)}
+img[src]{transition:opacity .3s}
+
+/* SOCIAL LINKS FOOTER */
+.footer-social{display:flex;gap:10px;margin-top:20px}
+.footer-social a{width:36px;height:36px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);transition:all .3s}
+.footer-social a:hover{background:var(--red);border-color:var(--red);color:#fff}
+
+/* INSTAGRAM FEED */
+.insta-section{padding:0 clamp(16px,4vw,48px) 0}
+.insta-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;max-width:1280px;margin:0 auto}
+@media(max-width:860px){.insta-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:480px){.insta-grid{grid-template-columns:repeat(2,1fr)}}
+.insta-item{position:relative;aspect-ratio:1;overflow:hidden;border-radius:4px;cursor:pointer}
+.insta-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s,filter .4s;filter:saturate(.9)}
+.insta-item:hover img{transform:scale(1.08);filter:saturate(1.1)}
+.insta-overlay{position:absolute;inset:0;background:rgba(200,16,46,.7);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.insta-item:hover .insta-overlay{opacity:1}
+.insta-overlay svg{color:#fff}
+.insta-header{text-align:center;padding:clamp(48px,6vw,72px) 16px 32px}
+.insta-handle{display:inline-flex;align-items:center;gap:8px;color:var(--red);font-weight:700;font-size:14px;letter-spacing:.05em}
+
+/* SECONDARY IMAGE HOVER */
+.prod-img-wrap{position:relative}
+.prod-img-hover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease;z-index:1}
+.prod-card:hover .prod-img-hover{opacity:1}
+.cat-prod-img-wrap{position:relative}
+.cat-prod-img-hover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease;z-index:1}
+.cat-prod-card:hover .cat-prod-img-hover{opacity:1}
+
+/* SEARCH BAR */
+.nav-search{position:relative;display:flex;align-items:center}
+.nav-search-input{width:0;padding:0;border:none;background:var(--cream);border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--dark);transition:all .3s;opacity:0;outline:none}
+.nav-search-input::placeholder{color:var(--muted2)}
+.nav-search.active .nav-search-input{width:200px;padding:8px 16px;opacity:1;border:1.5px solid var(--border2)}
+.nav-search.active .nav-search-input:focus{border-color:var(--red)}
+.nav-search-btn{background:none;border:none;cursor:pointer;padding:6px;color:var(--text);display:flex;align-items:center;transition:color .2s}
+.nav-search-btn:hover{color:var(--red)}
+@media(max-width:860px){
+  .nav-search{position:absolute;top:100%;left:0;right:0;padding:8px clamp(16px,4vw,48px);background:var(--white);border-bottom:1px solid var(--border);display:none}
+  .nav-search.mobile-show{display:flex}
+  .nav-search .nav-search-input{width:100%!important;opacity:1!important;padding:10px 16px!important;border:1.5px solid var(--border2)!important}
+}
+.search-results-overlay{display:none;position:fixed;top:108px;left:0;right:0;bottom:0;background:var(--cream);z-index:400;padding:32px clamp(16px,4vw,48px);overflow-y:auto}
+.search-results-overlay.active{display:block}
+.search-results-header{max-width:1280px;margin:0 auto 24px;display:flex;align-items:center;justify-content:space-between}
+.search-results-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.5rem;color:var(--dark)}
+.search-results-count{font-size:13px;color:var(--muted)}
+.search-results-close{background:none;border:none;cursor:pointer;color:var(--muted);font-size:13px;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;display:flex;align-items:center;gap:6px;transition:color .2s}
+.search-results-close:hover{color:var(--red)}
+.search-results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1280px;margin:0 auto}
+@media(max-width:1024px){.search-results-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.search-results-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:400px){.search-results-grid{grid-template-columns:1fr}}
+.search-no-results{text-align:center;padding:80px 20px;color:var(--muted);font-size:15px;max-width:1280px;margin:0 auto}
+.search-no-results svg{color:var(--muted2);margin-bottom:16px}
+
+/* DARK MODE TOGGLE */
+.theme-toggle{background:none;border:1.5px solid var(--border2);border-radius:100px;cursor:pointer;padding:6px 10px;display:flex;align-items:center;gap:6px;color:var(--text);transition:all .3s;font-size:12px;font-family:'Plus Jakarta Sans',sans-serif}
+.theme-toggle:hover{border-color:var(--red);color:var(--red)}
+.theme-toggle svg{transition:transform .3s}
+.theme-toggle:hover svg{transform:rotate(20deg)}
+.theme-toggle-label{font-weight:600}
+@media(max-width:860px){.theme-toggle{order:5}}
+
+/* DARK THEME VARIABLES */
+[data-theme="dark"]{
+  --cream:#1a1a1a;
+  --cream2:#222;
+  --white:#181818;
+  --dark:#f5f0eb;
+  --text:#d4cfc9;
+  --muted:#8a837b;
+  --muted2:#6a635b;
+  --border:rgba(255,255,255,.08);
+  --border2:rgba(255,255,255,.12);
+  --red-pale:rgba(200,16,46,.15);
+  --red-pale2:rgba(200,16,46,.08);
+  --shadow:rgba(0,0,0,.3);
+}
+[data-theme="dark"] body{background:#121212}
+[data-theme="dark"] .hero{background-image:linear-gradient(135deg,rgba(10,8,6,.92) 0%,rgba(10,8,6,.75) 100%),url("https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1600&q=80")}
+[data-theme="dark"] #nav{background:rgba(24,24,24,.97);border-bottom-color:rgba(255,255,255,.06)}
+[data-theme="dark"] .top-bar{background:rgba(24,24,24,.97)}
+[data-theme="dark"] .footer{background:#0d0d0d}
+[data-theme="dark"] .footer-bottom{border-top-color:rgba(255,255,255,.06)}
+[data-theme="dark"] .prod-card{background:#1e1e1e;border-color:rgba(255,255,255,.06)}
+[data-theme="dark"] .cat-prod-card{background:#1e1e1e;border-color:rgba(255,255,255,.06)}
+[data-theme="dark"] .testimonial-card{background:#1e1e1e;border-color:rgba(255,255,255,.06)}
+[data-theme="dark"] .benefit-item{background:#1e1e1e;border-color:rgba(255,255,255,.06)}
+[data-theme="dark"] .catalog-filter-btn{background:#1e1e1e;border-color:rgba(255,255,255,.06);color:var(--text)}
+[data-theme="dark"] .catalog-filter-btn.active{background:var(--red);color:#fff;border-color:var(--red)}
+[data-theme="dark"] .nav-search-input{background:#252525;color:#f5f0eb;border-color:rgba(255,255,255,.1)}
+[data-theme="dark"] .search-results-overlay{background:#1a1a1a}
+[data-theme="dark"] .nav-dropdown .dropdown-menu{background:#1e1e1e;border-color:rgba(255,255,255,.06)}
+[data-theme="dark"] .dropdown-item{color:var(--text)}
+[data-theme="dark"] .dropdown-item:hover{background:rgba(200,16,46,.1)}
+[data-theme="dark"] .cat-page-hero{background:linear-gradient(135deg,#1a1a1a,#222)}
+[data-theme="dark"] .store-card{background:#1e1e1e;border-color:rgba(255,255,255,.06)}
+[data-theme="dark"] .about-section{background:#1a1a1a}
+[data-theme="dark"] .cta-section{background:linear-gradient(135deg,#1a1a1a 0%,var(--red) 100%)}
+[data-theme="dark"] .benefits-strip{background:#1e1e1e;border-color:rgba(255,255,255,.06)}
+[data-theme="dark"] .insta-overlay{background:rgba(200,16,46,.8)}
+[data-theme="dark"] .back-to-top{background:#333;box-shadow:0 4px 16px rgba(0,0,0,.5)}
+[data-theme="dark"] .page{background:#121212}
+@media(max-width:860px){
+  [data-theme="dark"] .nav-links{background:#181818}
+  [data-theme="dark"] .nav-dropdown .dropdown-menu{background:#222}
+}
+
+/* SKIP TO CONTENT */
+.skip-link{position:absolute;top:-100%;left:16px;background:var(--red);color:#fff;padding:12px 24px;border-radius:0 0 8px 8px;font-weight:700;font-size:13px;z-index:9999;transition:top .2s}
+.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+
+<!-- SEARCH RESULTS OVERLAY -->
+<div class="search-results-overlay" id="searchOverlay">
+  <div class="search-results-header">
+    <div>
+      <div class="search-results-title" id="searchTitle">Resultados da busca</div>
+      <div class="search-results-count" id="searchCount" aria-live="polite"></div>
+    </div>
+    <button class="search-results-close" onclick="closeSearch()" aria-label="Fechar busca">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      Fechar
+    </button>
+  </div>
+  <div class="search-results-grid" id="searchResultsGrid"></div>
+  <div class="search-no-results" id="searchNoResults" style="display:none">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <p>Nenhum produto encontrado para sua busca.</p>
+  </div>
+</div>
+
+<!-- SVG SPRITE (WhatsApp icon defined once) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="wa-icon" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </symbol>
+</svg>
+
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-top">
+    <span class="nav-top-text">✨ Moda para toda a família — Roupas e Calçados</span>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Alternar tema claro/escuro" role="switch" aria-checked="false">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" id="themeIcon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span class="theme-toggle-label" id="themeLabel">Escuro</span>
+    </button>
+    <div class="nav-search" id="navSearch">
+      <input type="text" class="nav-search-input" id="searchInput" placeholder="Buscar produtos..." autocomplete="off" aria-label="Buscar produtos"/>
+      <button class="nav-search-btn" onclick="toggleSearch()" aria-label="Buscar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    </div>
+    <a href="https://wa.me/5511940379082" target="_blank" class="nav-top-wa">
+      <svg width="13" height="13" fill="currentColor"><use href="#wa-icon"/></svg>
+      (11) 94037-9082
+    </a>
+  </div>
+  <div class="nav-main">
+    <div class="nav-logo" onclick="showPage('home')" aria-label="Voltar ao início">
+      <div class="logo-circle"><span>AM</span></div>
+      <div class="logo-info">
+        <p>AGUIAR MODAS</p>
+        <p>Moda para toda família</p>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger-btn" role="button" tabindex="0" onclick="toggleMobileMenu()" onkeydown="if(event.key==='Enter')toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="mobile-nav">
+      <li><button onclick="showPage('home');scrollToSection('categorias')">Categorias</button></li>
+      <li class="nav-dropdown">
+        <button>
+          Catálogo
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dropdown-menu">
+          <button class="dropdown-item" onclick="showPage('feminino')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2z"/><path d="M12 12v10M9 19h6"/></svg>
+            Moda Feminina
+          </button>
+          <button class="dropdown-item" onclick="showPage('masculino')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10" cy="14" r="5"/><path d="M21 3l-6 6M15 3h6v6"/></svg>
+            Moda Masculina
+          </button>
+          <button class="dropdown-item" onclick="showPage('infantil')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9.5 2a2.5 2.5 0 1 1 5 0"/><path d="M4 7h16l-2 13H6L4 7z"/></svg>
+            Moda Infantil
+          </button>
+          <button class="dropdown-item" onclick="showPage('calcados')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17h18M3 17l2-9h14l2 9M8 17V8M16 17V8"/></svg>
+            Calçados
+          </button>
+        </div>
+      </li>
+      <li><button onclick="showPage('home');scrollToSection('lojas')">Nossas Lojas</button></li>
+      <li><button onclick="showPage('home');scrollToSection('sobre')">Sobre</button></li>
+    </ul>
+    <a href="https://wa.me/5511940379082?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20produtos!" target="_blank" class="nav-btn" aria-label="Falar no WhatsApp">
+      <svg width="15" height="15" fill="currentColor"><use href="#wa-icon"/></svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════ HOME PAGE ══════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+<section class="hero" id="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1600&q=80" alt="Moda" loading="eager"/></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-gradient2"></div>
+  <div class="hero-red-shape"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-dot"></div>
+      <span>Mais de 16 anos vestindo famílias</span>
+    </div>
+    <h1 class="hero-title">
+      MODA PARA<br>
+      <span class="red-stroke">TODA</span> <span class="red-fill">FAMÍLIA</span>
+    </h1>
+    <p class="hero-slogan">"<em>Fazemos do espelho o seu melhor amigo</em>"</p>
+    <p class="hero-desc">Roupas femininas, masculinas, infantis e calçados para todos os estilos e ocasiões. Qualidade e preço justo em cada peça.</p>
+    <div class="hero-btns">
+      <button onclick="showPage('home');scrollToSection('categorias')" class="btn-red" style="border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif">
+        Ver catálogo
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+      <button onclick="showPage('home');scrollToSection('lojas')" class="btn-ghost-white" style="border-radius:100px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif">
+        Nossas lojas
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </button>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge">
+        <div class="hb-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div><div class="hb-num">5</div><div class="hb-label">Unidades</div></div>
+      </div>
+      <div class="hero-badge">
+        <div class="hb-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div><div class="hb-num">16+</div><div class="hb-label">Anos no mercado</div></div>
+      </div>
+      <div class="hero-badge">
+        <div class="hb-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+        <div><div class="hb-num">4</div><div class="hb-label">Categorias</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="m-item"><span class="m-star">✦</span> Moda Feminina</div>
+    <div class="m-item"><span class="m-star">✦</span> Moda Masculina</div>
+    <div class="m-item"><span class="m-star">✦</span> Moda Infantil</div>
+    <div class="m-item"><span class="m-star">✦</span> Calçados</div>
+    <div class="m-item"><span class="m-star">✦</span> Novas Coleções</div>
+    <div class="m-item"><span class="m-star">✦</span> Promoções</div>
+    <div class="m-item"><span class="m-star">✦</span> Pagamento Facilitado</div>
+    <div class="m-item"><span class="m-star">✦</span> 5 Unidades em SP</div>
+    <div class="m-item"><span class="m-star">✦</span> Moda Feminina</div>
+    <div class="m-item"><span class="m-star">✦</span> Moda Masculina</div>
+    <div class="m-item"><span class="m-star">✦</span> Moda Infantil</div>
+    <div class="m-item"><span class="m-star">✦</span> Calçados</div>
+    <div class="m-item"><span class="m-star">✦</span> Novas Coleções</div>
+    <div class="m-item"><span class="m-star">✦</span> Promoções</div>
+    <div class="m-item"><span class="m-star">✦</span> Pagamento Facilitado</div>
+    <div class="m-item"><span class="m-star">✦</span> 5 Unidades em SP</div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section categories-section" id="categorias">
+  <div class="section-inner">
+    <div class="cats-header reveal">
+      <div>
+        <div class="tag"><div class="tag-dot"></div> Categorias</div>
+        <h2 class="section-h">Encontre seu<br><span class="light">estilo aqui</span></h2>
+      </div>
+      <p class="section-p">Peças para toda a família — do bebê ao adulto, do casual ao social.</p>
+    </div>
+    <div class="cats-grid">
+      <div class="cat-card reveal" onclick="showPage('feminino')" style="cursor:pointer">
+        <img class="cat-img" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80" alt="Feminino" loading="lazy"/>
+        <div class="cat-overlay">
+          <div class="cat-label">Coleção</div>
+          <div class="cat-name">Moda Feminina</div>
+          <div class="cat-sub">Vestidos, blusas, calças e muito mais</div>
+        </div>
+        <div class="cat-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </div>
+      <div class="cat-card reveal d1" onclick="showPage('masculino')" style="cursor:pointer">
+        <img class="cat-img" src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=80" alt="Masculino" loading="lazy"/>
+        <div class="cat-overlay">
+          <div class="cat-label">Coleção</div>
+          <div class="cat-name">Moda Masculina</div>
+          <div class="cat-sub">Camisetas, calças, bermudas e mais</div>
+        </div>
+        <div class="cat-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </div>
+      <div class="cat-card reveal d2" onclick="showPage('infantil')" style="cursor:pointer">
+        <img class="cat-img" src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=800&q=80" alt="Infantil" loading="lazy"/>
+        <div class="cat-overlay">
+          <div class="cat-label">Coleção</div>
+          <div class="cat-name">Moda Infantil</div>
+          <div class="cat-sub">Do bebê aos 14 anos</div>
+        </div>
+        <div class="cat-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </div>
+      <div class="cat-card reveal d3" onclick="showPage('calcados')" style="cursor:pointer">
+        <img class="cat-img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80" alt="Calçados" loading="lazy"/>
+        <div class="cat-overlay">
+          <div class="cat-label">Coleção</div>
+          <div class="cat-name">Calçados</div>
+          <div class="cat-sub">Tênis, sandálias, sapatos e botas</div>
+        </div>
+        <div class="cat-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="catalog-section" id="destaques">
+  <div class="catalog-inner">
+    <div class="catalog-header reveal">
+      <div class="tag" style="margin:0 auto 16px"><div class="tag-dot"></div> Destaques</div>
+      <h2 class="section-h" style="text-align:center">Peças em <span class="light">destaque</span></h2>
+      <p class="section-p" style="margin:12px auto 0;text-align:center">Consulte disponibilidade e preços direto pelo WhatsApp.</p>
+    </div>
+    <div class="catalog-grid" style="margin-top:40px">
+      <div class="prod-card reveal">
+        <div class="prod-img-wrap">
+          <img class="prod-img" src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=600&q=80" alt="" loading="lazy"/>
+          <span class="prod-badge">Novo</span>
+          <a href="https://wa.me/5511940379082?text=Ol%C3%A1!%20Vi%20uma%20pe%C3%A7a%20no%20site%20e%20quero%20saber%20mais!" target="_blank" class="prod-wa"><svg width="17" height="17" fill="#25D366"><use href="#wa-icon"/></svg></a>
+        </div>
+        <div class="prod-info"><div class="prod-category">Feminino</div><div class="prod-name">Conjunto Casual Moderno</div><div class="prod-price-hint">A partir de R$ 89,90</div><div class="prod-cta">Consultar <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </div>
+      <div class="prod-card reveal d1">
+        <div class="prod-img-wrap">
+          <img class="prod-img" src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&q=80" alt="" loading="lazy"/>
+          <a href="https://wa.me/5511940379082" target="_blank" class="prod-wa"><svg width="17" height="17" fill="#25D366"><use href="#wa-icon"/></svg></a>
+        </div>
+        <div class="prod-info"><div class="prod-category">Masculino</div><div class="prod-name">Camiseta Básica Premium</div><div class="prod-price-hint">A partir de R$ 49,90</div><div class="prod-cta">Consultar <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </div>
+      <div class="prod-card reveal d2">
+        <div class="prod-img-wrap">
+          <img class="prod-img" src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=600&q=80" alt="" loading="lazy"/>
+          <span class="prod-badge">Destaque</span>
+          <a href="https://wa.me/5511940379082" target="_blank" class="prod-wa"><svg width="17" height="17" fill="#25D366"><use href="#wa-icon"/></svg></a>
+        </div>
+        <div class="prod-info"><div class="prod-category">Infantil</div><div class="prod-name">Conjunto Infantil Colorido</div><div class="prod-price-hint">A partir de R$ 69,90</div><div class="prod-cta">Consultar <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </div>
+      <div class="prod-card reveal d3">
+        <div class="prod-img-wrap">
+          <img class="prod-img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80" alt="" loading="lazy"/>
+          <a href="https://wa.me/5511940379082" target="_blank" class="prod-wa"><svg width="17" height="17" fill="#25D366"><use href="#wa-icon"/></svg></a>
+        </div>
+        <div class="prod-info"><div class="prod-category">Calçados</div><div class="prod-name">Tênis Esportivo Top</div><div class="prod-price-hint">A partir de R$ 119,90</div><div class="prod-cta">Consultar <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="reveal">
+      <a href="https://wa.me/5511940379082?text=Ol%C3%A1!%20Quero%20ver%20mais%20produtos%20da%20Aguiar%20Modas!" target="_blank" class="btn-red" style="display:inline-flex">Ver todos no WhatsApp <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="depoimentos">
+  <div class="testimonials-inner">
+    <div class="testimonials-header reveal">
+      <div class="tag" style="margin:0 auto 16px"><div class="tag-dot"></div> Depoimentos</div>
+      <h2 class="section-h">O que nossos clientes <span class="light">dizem</span></h2>
+      <p class="section-p" style="margin:12px auto 0;text-align:center">Mais de 16 anos vestindo famílias em São Paulo com qualidade e carinho.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-text">Sempre compro na Aguiar Modas. A qualidade das roupas é excelente e os preços são muito justos. Visto toda a minha família lá!</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MR</div>
+          <div><div class="testimonial-name">Maria Rodrigues</div><div class="testimonial-loc">São Paulo, SP — Cliente há 8 anos</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal d1">
+        <div class="testimonial-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-text">O atendimento pelo WhatsApp é super rápido e atencioso. Encomendei pelo site, tirei dúvidas na hora e recebi tudo certinho. Recomendo demais!</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">CS</div>
+          <div><div class="testimonial-name">Carlos Silva</div><div class="testimonial-loc">Tatuapé, SP — Cliente há 3 anos</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal d2">
+        <div class="testimonial-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-text">Comprei roupas infantis pro meu filho e fiquei encantada. Tecido de qualidade, costura perfeita e preço acessível. Já virei cliente fiel!</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AF</div>
+          <div><div class="testimonial-name">Ana Ferreira</div><div class="testimonial-loc">Centro, SP — Cliente há 5 anos</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS / PAYMENT STRIP -->
+<section class="benefits-strip">
+  <div class="benefits-inner">
+    <div class="benefit-item reveal">
+      <div class="benefit-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div>
+      <div><div class="benefit-label">Cartão de Crédito</div><div class="benefit-sub">Até 3x sem juros</div></div>
+    </div>
+    <div class="benefit-item reveal d1">
+      <div class="benefit-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+      <div><div class="benefit-label">Pix com Desconto</div><div class="benefit-sub">5% off no Pix</div></div>
+    </div>
+    <div class="benefit-item reveal d2">
+      <div class="benefit-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div><div class="benefit-label">5 Lojas em SP</div><div class="benefit-sub">Retire na loja mais próxima</div></div>
+    </div>
+    <div class="benefit-item reveal d3">
+      <div class="benefit-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <div><div class="benefit-label">Troca Garantida</div><div class="benefit-sub">Até 30 dias na loja</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STORES -->
+<section class="stores-section" id="lojas">
+  <div class="stores-inner">
+    <div class="stores-header reveal">
+      <div class="tag">Nossas Lojas</div>
+      <h2 class="section-h">5 unidades para <span class="light" style="-webkit-text-stroke:1px rgba(255,255,255,.2)">te atender</span></h2>
+      <p class="section-p">Presentes em São Paulo para te atender melhor. Encontre a mais próxima de você.</p>
+    </div>
+    <div class="stores-grid">
+      <div class="store-card reveal">
+        <div class="store-num">01</div>
+        <div class="store-name">UNIDADE EDUARDO RAMOS</div>
+        <div class="store-info">
+          <div class="store-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Eduardo Pereira Ramos, 439</div>
+          <div class="store-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Seg–Sab: 9h às 19h · Dom: 10h às 16h</div>
+          <div class="store-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(11) 94037-9082</div>
+        </div>
+        <a href="https://wa.me/5511940379082?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20a%20unidade%20Eduardo%20Ramos." target="_blank" class="store-wa-btn" aria-label="Falar com esta unidade pelo WhatsApp"><svg width="15" height="15" fill="currentColor"><use href="#wa-icon"/></svg>Falar com esta unidade</a>
+      </div>
+      <div class="store-card reveal d1">
+        <div class="store-num">02</div>
+        <div class="store-name">UNIDADE YERVANT 1982</div>
+        <div class="store-info">
+          <div class="store-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Yervant Kissajikian, 1982</div>
+          <div class="store-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Seg–Sab: 9h às 19h · Dom: 10h às 16h</div>
+          <div class="store-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(11) 94037-9082</div>
+        </div>
+        <a href="https://wa.me/5511940379082?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20a%20unidade%20Yervant%201982." target="_blank" class="store-wa-btn" aria-label="Falar com esta unidade pelo WhatsApp"><svg width="15" height="15" fill="currentColor"><use href="#wa-icon"/></svg>Falar com esta unidade</a>
+      </div>
+      <div class="store-card reveal d2">
+        <div class="store-num">03</div>
+        <div class="store-name">UNIDADE YERVANT 3642</div>
+        <div class="store-info">
+          <div class="store-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Yervant Kissajikian, 3642</div>
+          <div class="store-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Seg–Sab: 9h às 19h · Dom: 10h às 16h</div>
+          <div class="store-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(11) 94037-9082</div>
+        </div>
+        <a href="https://wa.me/5511940379082?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20a%20unidade%20Yervant%203642." target="_blank" class="store-wa-btn" aria-label="Falar com esta unidade pelo WhatsApp"><svg width="15" height="15" fill="currentColor"><use href="#wa-icon"/></svg>Falar com esta unidade</a>
+      </div>
+    </div>
+    <div class="stores-row2">
+      <div class="store-card reveal d1">
+        <div class="store-num">04</div>
+        <div class="store-name">UNIDADE CENTRO</div>
+        <div class="store-info">
+          <div class="store-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Rua das Palmeiras, 240 — Centro, SP</div>
+          <div class="store-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Seg–Sab: 9h às 19h · Dom: Fechado</div>
+          <div class="store-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(11) 94037-9082</div>
+        </div>
+        <a href="https://wa.me/5511940379082?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20a%20unidade%20Centro." target="_blank" class="store-wa-btn" aria-label="Falar com esta unidade pelo WhatsApp"><svg width="15" height="15" fill="currentColor"><use href="#wa-icon"/></svg>Falar com esta unidade</a>
+      </div>
+      <div class="store-card reveal d2">
+        <div class="store-num">05</div>
+        <div class="store-name">UNIDADE ZONA LESTE</div>
+        <div class="store-info">
+          <div class="store-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Radial Leste, 800 — Tatuapé, SP</div>
+          <div class="store-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Seg–Sab: 9h às 19h · Dom: 10h às 15h</div>
+          <div class="store-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(11) 94037-9082</div>
+        </div>
+        <a href="https://wa.me/5511940379082?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20a%20unidade%20Zona%20Leste." target="_blank" class="store-wa-btn" aria-label="Falar com esta unidade pelo WhatsApp"><svg width="15" height="15" fill="currentColor"><use href="#wa-icon"/></svg>Falar com esta unidade</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about-section" id="sobre">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-imgs reveal">
+        <div class="about-img-main"><img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&q=80" alt="Loja" loading="lazy"/></div>
+        <div class="about-img-secondary"><img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=600&q=80" alt="Atendimento" loading="lazy"/></div>
+        <div class="about-stat-card"><div class="asc-num">16+</div><div class="asc-label">Anos de história</div></div>
+      </div>
+      <div class="about-content reveal d1">
+        <div class="tag"><div class="tag-dot"></div> Nossa história</div>
+        <h2>Vestindo famílias<br>há mais de<br><span style="color:var(--red)">16 anos.</span></h2>
+        <p>A <strong>Aguiar Modas</strong> nasceu do sonho de levar moda de qualidade com preço justo para toda a família. Começamos com uma loja e hoje temos <strong>5 unidades em São Paulo</strong>, atendendo milhares de clientes todo ano.</p>
+        <p>Acreditamos que todo mundo merece se vestir bem e se sentir bem. Por isso nosso slogan é verdadeiro: <strong>"Fazemos do espelho o seu melhor amigo."</strong></p>
+        <div class="about-values">
+          <div class="about-val"><div class="val-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><span class="val-text">Qualidade garantida</span></div>
+          <div class="about-val"><div class="val-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><span class="val-text">Preço justo</span></div>
+          <div class="about-val"><div class="val-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span class="val-text">Toda a família</span></div>
+          <div class="about-val"><div class="val-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><span class="val-text">5 unidades em SP</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg-circle c1"></div>
+  <div class="cta-bg-circle c2"></div>
+  <div class="cta-inner reveal">
+    <h2>VEJA NOSSAS<br><span>NOVIDADES</span></h2>
+    <p>Novas peças chegando toda semana. Fale com a gente pelo WhatsApp e fique por dentro das últimas coleções.</p>
+    <a href="https://wa.me/5511940379082?text=Ol%C3%A1!%20Quero%20ver%20as%20novidades%20da%20Aguiar%20Modas!" target="_blank" class="btn-white">
+      <svg width="18" height="18" fill="#C8102E"><use href="#wa-icon"/></svg>
+      Ver novidades no WhatsApp
+    </a>
+  </div>
+</section>
+
+</div><!-- end page-home -->
+
+<!-- ══════════════════════════════════ FEMININO PAGE ══════════════════════════════════ -->
+<div id="page-feminino" class="page" style="padding-top:108px;min-height:100vh;background:var(--cream)">
+  <div class="catalog-page-header">
+    <div class="catalog-breadcrumb">
+      <button onclick="showPage('home')" aria-label="Voltar ao início">Início</button>
+      <span>›</span>
+      <span style="color:var(--dark);font-weight:600">Moda Feminina</span>
+    </div>
+    <h1 class="catalog-page-title">MODA<br>FEMININA</h1>
+    <p class="catalog-page-sub">Vestidos, blusas, calças, conjuntos e muito mais. Estilo para o dia a dia e ocasiões especiais.</p>
+    <div class="catalog-page-filters">
+      <button class="catalog-filter-btn active" onclick="filterCat(this,'fem')">Todos</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'fem','vestidos')">Vestidos</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'fem','blusas')">Blusas</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'fem','calcas')">Calças</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'fem','conjuntos')">Conjuntos</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'fem','social')">Social</button>
+    </div>
+  </div>
+  <div class="catalog-products-grid" id="grid-fem">
+    <!-- Products loaded dynamically from produtos.json -->
+  </div>
+  <div style="text-align:center;padding:40px 16px 80px">
+    <a href="https://wa.me/5511940379082?text=Ol%C3%A1!%20Quero%20ver%20mais%20pe%C3%A7as%20femininas!" target="_blank" class="btn-red" style="display:inline-flex">Ver mais no WhatsApp <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ MASCULINO PAGE ══════════════════════════════════ -->
+<div id="page-masculino" class="page" style="padding-top:108px;min-height:100vh;background:var(--cream)">
+  <div class="catalog-page-header">
+    <div class="catalog-breadcrumb">
+      <button onclick="showPage('home')" aria-label="Voltar ao início">Início</button>
+      <span>›</span>
+      <span style="color:var(--dark);font-weight:600">Moda Masculina</span>
+    </div>
+    <h1 class="catalog-page-title">MODA<br>MASCULINA</h1>
+    <p class="catalog-page-sub">Camisetas, calças, bermudas, camisas e muito mais. Estilo para todos os momentos.</p>
+    <div class="catalog-page-filters">
+      <button class="catalog-filter-btn active" onclick="filterCat(this,'masc')">Todos</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'masc','camisetas')">Camisetas</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'masc','calcas')">Calças</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'masc','bermudas')">Bermudas</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'masc','social')">Social</button>
+    </div>
+  </div>
+  <div class="catalog-products-grid" id="grid-masc">
+    <!-- Products loaded dynamically from produtos.json -->
+  </div>
+  <div style="text-align:center;padding:40px 16px 80px">
+    <a href="https://wa.me/5511940379082?text=Ol%C3%A1!%20Quero%20ver%20mais%20pe%C3%A7as%20masculinas!" target="_blank" class="btn-red" style="display:inline-flex">Ver mais no WhatsApp <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ INFANTIL PAGE ══════════════════════════════════ -->
+<div id="page-infantil" class="page" style="padding-top:108px;min-height:100vh;background:var(--cream)">
+  <div class="catalog-page-header">
+    <div class="catalog-breadcrumb">
+      <button onclick="showPage('home')" aria-label="Voltar ao início">Início</button>
+      <span>›</span>
+      <span style="color:var(--dark);font-weight:600">Moda Infantil</span>
+    </div>
+    <h1 class="catalog-page-title">MODA<br>INFANTIL</h1>
+    <p class="catalog-page-sub">Roupas para bebês, meninas e meninos. Do recém-nascido aos 14 anos, com conforto e muito estilo.</p>
+    <div class="catalog-page-filters">
+      <button class="catalog-filter-btn active" onclick="filterCat(this,'inf')">Todos</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'inf','bebes')">Bebês (0–2)</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'inf','meninas')">Meninas</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'inf','meninos')">Meninos</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'inf','conjuntos')">Conjuntos</button>
+    </div>
+  </div>
+  <div class="catalog-products-grid" id="grid-inf">
+    <!-- Products loaded dynamically from produtos.json -->
+  </div>
+  <div style="text-align:center;padding:40px 16px 80px">
+    <a href="https://wa.me/5511940379082?text=Ol%C3%A1!%20Quero%20ver%20mais%20pe%C3%A7as%20infantis!" target="_blank" class="btn-red" style="display:inline-flex">Ver mais no WhatsApp <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ CALÇADOS PAGE ══════════════════════════════════ -->
+<div id="page-calcados" class="page" style="padding-top:108px;min-height:100vh;background:var(--cream)">
+  <div class="catalog-page-header">
+    <div class="catalog-breadcrumb">
+      <button onclick="showPage('home')" aria-label="Voltar ao início">Início</button>
+      <span>›</span>
+      <span style="color:var(--dark);font-weight:600">Calçados</span>
+    </div>
+    <h1 class="catalog-page-title">CALÇADOS</h1>
+    <p class="catalog-page-sub">Tênis, sandálias, sapatos, botas e muito mais. Para toda a família, em todos os estilos.</p>
+    <div class="catalog-page-filters">
+      <button class="catalog-filter-btn active" onclick="filterCat(this,'calc')">Todos</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'calc','tenis')">Tênis</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'calc','sandalias')">Sandálias</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'calc','sapatos')">Sapatos</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'calc','botas')">Botas</button>
+      <button class="catalog-filter-btn" onclick="filterCat(this,'calc','infantil')">Infantil</button>
+    </div>
+  </div>
+  <div class="catalog-products-grid" id="grid-calc">
+    <!-- Products loaded dynamically from produtos.json -->
+  </div>
+  <div style="text-align:center;padding:40px 16px 80px">
+    <a href="https://wa.me/5511940379082?text=Ol%C3%A1!%20Quero%20ver%20mais%20cal%C3%A7ados!" target="_blank" class="btn-red" style="display:inline-flex">Ver mais no WhatsApp <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</div>
+
+
+<!-- INSTAGRAM FEED (Simulated) -->
+<section class="insta-section">
+  <div class="insta-header">
+    <div class="tag" style="margin:0 auto 16px"><div class="tag-dot"></div> Instagram</div>
+    <h2 class="section-h" style="text-align:center">Siga-nos no <span class="light">Instagram</span></h2>
+    <a href="https://instagram.com/aguiarmodas" target="_blank" class="insta-handle" style="margin-top:8px;display:inline-flex">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      @aguiarmodas
+    </a>
+  </div>
+  <div class="insta-grid">
+    <div class="insta-item">
+      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=80" alt="Instagram" loading="lazy"/>
+      <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+    </div>
+    <div class="insta-item">
+      <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=400&q=80" alt="Instagram" loading="lazy"/>
+      <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+    </div>
+    <div class="insta-item">
+      <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=400&q=80" alt="Instagram" loading="lazy"/>
+      <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+    </div>
+    <div class="insta-item">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80" alt="Instagram" loading="lazy"/>
+      <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+    </div>
+    <div class="insta-item">
+      <img src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=400&q=80" alt="Instagram" loading="lazy"/>
+      <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+    </div>
+    <div class="insta-item">
+      <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80" alt="Instagram" loading="lazy"/>
+      <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- SHARED FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <div class="footer-logo-circle"><span>AM</span></div>
+          <div class="footer-logo-info"><p>AGUIAR MODAS</p><p>Moda para toda família</p></div>
+        </div>
+        <p class="footer-desc">Moda feminina, masculina, infantil e calçados para toda a família. Qualidade e preço justo há mais de 16 anos em São Paulo.</p>
+        <p class="footer-slogan">"Fazemos do espelho o seu melhor amigo"</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/aguiarmodas" target="_blank" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://facebook.com/aguiarmodas" target="_blank" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://tiktok.com/@aguiarmodas" target="_blank" aria-label="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+          <a href="https://wa.me/5511940379082" target="_blank" aria-label="WhatsApp">
+            <svg width="14" height="14" fill="currentColor"><use href="#wa-icon"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-h">Catálogo</div>
+        <ul class="footer-links">
+          <li><button onclick="showPage('feminino')">Moda Feminina</button></li>
+          <li><button onclick="showPage('masculino')">Moda Masculina</button></li>
+          <li><button onclick="showPage('infantil')">Moda Infantil</button></li>
+          <li><button onclick="showPage('calcados')">Calçados</button></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-h">A Loja</div>
+        <ul class="footer-links">
+          <li><button onclick="showPage('home');scrollToSection('lojas')">Nossas Lojas (5)</button></li>
+          <li><button onclick="showPage('home');scrollToSection('sobre')">Nossa História</button></li>
+          <li><a href="https://wa.me/5511940379082">WhatsApp</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-h">Contato</div>
+        <div class="footer-addr">
+          <div class="footer-addr-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(11) 94037-9082</div>
+          <div class="footer-addr-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Seg–Sab: 9h às 19h</div>
+          <div class="footer-addr-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>5 unidades — São Paulo, SP</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Lojas Aguiar Modas. Todos os direitos reservados.</span>
+      <span class="footer-copy">São Paulo, SP</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<div class="wa-float" aria-label="Conversar pelo WhatsApp">
+  <div class="wa-tip">Fale com a gente!</div>
+  <a href="https://wa.me/5511940379082?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais!" target="_blank" class="wa-pos">
+    <div class="wa-ring"></div>
+    <div class="wa-circle">
+      <svg width="26" height="26" fill="white"><use href="#wa-icon"/></svg>
+    </div>
+  </a>
+</div>
+
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+// NAV SCROLL
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+// PAGE ROUTER
+function showPage(id) {
+  closeMobileMenu();
+  document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+  const el = document.getElementById('page-' + id);
+  if (el) el.style.display = 'block';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  // re-trigger reveals on catalog pages
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.on)').forEach(el => obs.observe(el));
+  }, 100);
+}
+
+function scrollToSection(id) {
+  setTimeout(() => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({behavior: 'smooth'});
+  }, 50);
+}
+
+// SMOOTH SCROLL (home page anchors)
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({behavior: 'smooth'}); }
+  });
+});
+
+// SCROLL REVEAL
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
+}, {threshold: 0.08});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// MOBILE MENU
+function toggleMobileMenu() {
+  const nav = document.getElementById('mobile-nav');
+  const btn = document.getElementById('hamburger-btn');
+  nav.classList.toggle('mobile-open');
+  btn.classList.toggle('open');
+  document.body.style.overflow = nav.classList.contains('mobile-open') ? 'hidden' : '';
+}
+function closeMobileMenu() {
+  const nav = document.getElementById('mobile-nav');
+  const btn = document.getElementById('hamburger-btn');
+  if (nav && nav.classList.contains('mobile-open')) {
+    nav.classList.remove('mobile-open');
+    btn.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+// Close mobile menu on nav clicks
+document.querySelectorAll('#mobile-nav a, #mobile-nav button').forEach(el => {
+  el.addEventListener('click', () => setTimeout(closeMobileMenu, 100));
+});
+
+// CATALOG FILTERS (smooth hide/show)
+function filterCat(btn, gridId, sub) {
+  const grid = document.getElementById('grid-' + gridId);
+  if (!grid) return;
+  btn.closest('.catalog-page-filters').querySelectorAll('.catalog-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const cards = grid.querySelectorAll('.cat-prod-card');
+  cards.forEach(c => {
+    if (!sub || c.dataset.sub === sub) {
+      c.classList.remove('filtered-out');
+      c.style.display = '';
+    } else {
+      c.classList.add('filtered-out');
+      setTimeout(() => { if (c.classList.contains('filtered-out')) c.style.display = 'none'; }, 400);
+    }
+  });
+}
+
+// BACK TO TOP
+const backToTopBtn = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTopBtn.classList.toggle('visible', window.scrollY > 400);
+});
+
+
+// ═══════ PRODUCT DATA SYSTEM ═══════
+let allProducts = [];
+
+// Card HTML renderer
+function renderProductCard(p, delay) {
+  const delayClass = delay > 0 ? ' d' + Math.min(delay, 4) : '';
+  const badgeHTML = p.badge ? '<span class="cat-prod-badge ' + p.badge + '">' + 
+    (p.badge === 'novo' ? 'Novo' : p.badge === 'promo' ? 'Promoção' : 'Destaque') + '</span>' : '';
+  const waMsg = encodeURIComponent('Olá! Gostaria de saber o preço do ' + p.name + '. Vi no site e me interessei!');
+  
+  return '<div class="cat-prod-card reveal on' + delayClass + '" data-sub="' + p.subcategory + '" data-name="' + p.name.toLowerCase() + '">' +
+    '<div class="cat-prod-img-wrap">' +
+      '<img class="cat-prod-img" src="' + p.image + '" alt="' + p.name + '" loading="lazy"/>' +
+      (p.hoverImage ? '<img class="cat-prod-img-hover" src="' + p.hoverImage + '" alt="' + p.name + ' - alternativa" loading="lazy"/>' : '') +
+      badgeHTML +
+      '<a href="https://wa.me/5511940379082?text=' + waMsg + '" target="_blank" class="cat-prod-wa" aria-label="WhatsApp - ' + p.name + '">' +
+        '<svg width="17" height="17" fill="#25D366"><use href="#wa-icon"/></svg>' +
+      '</a>' +
+    '</div>' +
+    '<div class="cat-prod-info">' +
+      '<div class="cat-prod-tag">' + p.tag + '</div>' +
+      '<div class="cat-prod-name">' + p.name + '</div>' +
+      '<div class="cat-prod-price-hint">A partir de ' + p.price + '</div>' +
+      '<div class="cat-prod-cta">Consultar preço <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>' +
+    '</div>' +
+  '</div>';
+}
+
+// Render products into a grid
+function renderGrid(gridId, category) {
+  const grid = document.getElementById(gridId);
+  if (!grid) return;
+  const products = allProducts.filter(p => p.category === category);
+  grid.innerHTML = products.map((p, i) => renderProductCard(p, i % 4)).join('');
+  // Re-trigger reveal
+  grid.querySelectorAll('.reveal:not(.on)').forEach(el => obs.observe(el));
+}
+
+// Fetch and initialize products
+fetch('produtos.json')
+  .then(r => r.json())
+  .then(data => {
+    allProducts = data;
+    renderGrid('grid-fem', 'feminino');
+    renderGrid('grid-masc', 'masculino');
+    renderGrid('grid-inf', 'infantil');
+    renderGrid('grid-calc', 'calcados');
+  })
+  .catch(err => console.warn('Could not load produtos.json:', err));
+
+// ═══════ SEARCH SYSTEM ═══════
+let searchTimeout = null;
+
+function toggleSearch() {
+  const searchBox = document.getElementById('navSearch');
+  const input = document.getElementById('searchInput');
+  searchBox.classList.toggle('active');
+  if (searchBox.classList.contains('active')) {
+    input.focus();
+  } else {
+    input.value = '';
+    closeSearch();
+  }
+}
+
+function closeSearch() {
+  const overlay = document.getElementById('searchOverlay');
+  overlay.classList.remove('active');
+  document.getElementById('searchInput').value = '';
+  document.getElementById('navSearch').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('searchInput').addEventListener('input', function(e) {
+  clearTimeout(searchTimeout);
+  const query = e.target.value.trim().toLowerCase();
+  
+  if (query.length < 2) {
+    document.getElementById('searchOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+    return;
+  }
+
+  searchTimeout = setTimeout(() => {
+    const results = allProducts.filter(p => 
+      p.name.toLowerCase().includes(query) ||
+      p.tag.toLowerCase().includes(query) ||
+      p.category.includes(query) ||
+      p.subcategory.includes(query)
+    );
+
+    const overlay = document.getElementById('searchOverlay');
+    const grid = document.getElementById('searchResultsGrid');
+    const noResults = document.getElementById('searchNoResults');
+    const countEl = document.getElementById('searchCount');
+
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    if (results.length > 0) {
+      grid.innerHTML = results.map((p, i) => renderProductCard(p, i % 4)).join('');
+      grid.style.display = '';
+      noResults.style.display = 'none';
+      countEl.textContent = results.length + ' produto' + (results.length !== 1 ? 's' : '') + ' encontrado' + (results.length !== 1 ? 's' : '');
+    } else {
+      grid.style.display = 'none';
+      noResults.style.display = '';
+      countEl.textContent = 'Nenhum resultado';
+    }
+  }, 250);
+});
+
+// Close search on Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeSearch();
+});
+
+
+// DARK MODE TOGGLE
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  const newTheme = isDark ? 'light' : 'dark';
+  html.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  updateThemeUI(newTheme);
+}
+
+function updateThemeUI(theme) {
+  const toggle = document.getElementById('themeToggle');
+  const icon = document.getElementById('themeIcon');
+  const label = document.getElementById('themeLabel');
+  const isDark = theme === 'dark';
+  
+  toggle.setAttribute('aria-checked', isDark ? 'true' : 'false');
+  label.textContent = isDark ? 'Claro' : 'Escuro';
+  icon.innerHTML = isDark
+    ? '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'
+    : '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+}
+
+// Apply saved theme on load
+(function() {
+  const saved = localStorage.getItem('theme') || 'light';
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    updateThemeUI('dark');
+  }
+})();
+
+</script>
+</body>
+</html>
