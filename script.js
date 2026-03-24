@@ -427,6 +427,18 @@ window.addToCartFromModal = function() {
   saveCart();
   closeModal();
   showToast(`${activeModalProduct.name} adicionado à sacola!`);
+  
+  // Button success animation
+  const btn = document.querySelector('.modal-add-btn');
+  const oldText = btn.innerHTML;
+  btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Adicionado';
+  btn.classList.add('success');
+  
+  setTimeout(() => {
+    btn.innerHTML = oldText;
+    btn.classList.remove('success');
+    closeModal();
+  }, 800);
 }
 
 // --- Toasts ---
@@ -437,6 +449,7 @@ function showToast(msg) {
   toast.innerHTML = `
     <div class="toast-icon">✓</div>
     <div>${msg}</div>
+    <div class="toast-progress"></div>
   `;
   container.appendChild(toast);
   
@@ -449,6 +462,17 @@ function showToast(msg) {
     setTimeout(() => toast.remove(), 400);
   }, 3000);
 }
+
+
+// --- A11Y: Focus Traps ---
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const isCartOpen = document.getElementById('cartSidebar').classList.contains('active');
+    const isModalOpen = document.getElementById('quickModalOverlay').classList.contains('active');
+    if (isCartOpen) toggleCart();
+    if (isModalOpen) closeModal();
+  }
+});
 
 // --- WhatsApp Checkout ---
 window.checkout = function() {

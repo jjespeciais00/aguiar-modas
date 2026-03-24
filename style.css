@@ -534,3 +534,24 @@ img[src]{transition:opacity .3s}
 [data-theme="dark"] .cart-sidebar, [data-theme="dark"] .quick-modal-content { background:#1A1A1A; }
 [data-theme="dark"] .cart-footer, [data-theme="dark"] .quick-modal-close, [data-theme="dark"] .size-btn, [data-theme="dark"] .qty-controls { background:#252525; border-color:rgba(255,255,255,0.1); }
 [data-theme="dark"] .toast { background:#333; }
+
+
+/* --- SENIOR POLISH: CUSTOM SCROLLBARS --- */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: rgba(200, 16, 46, 0.4); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--red); }
+[data-theme="dark"] ::-webkit-scrollbar-track { background: #121212; }
+
+/* --- SENIOR POLISH: TOAST PROGRESS BAR --- */
+.toast { position: relative; overflow: hidden; }
+.toast-progress { position: absolute; bottom: 0; left: 0; height: 3px; background: #4CAF50; width: 100%; transform-origin: left; animation: toastProgress 3s linear forwards; }
+@keyframes toastProgress {
+  0% { transform: scaleX(1); }
+  100% { transform: scaleX(0); }
+}
+
+/* --- SENIOR POLISH: BUTTON LOADING ANIMATION --- */
+.modal-add-btn.success { background: #4CAF50 !important; color: white !important; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4) !important; pointer-events: none; }
+.cart-checkout-btn svg { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.cart-checkout-btn:hover svg { transform: scale(1.2) rotate(-10deg); }
