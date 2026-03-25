@@ -47,5 +47,5 @@ Abra seu navegador na porta indicada para interagir com a aplicação completa.
 
 ---
 <div align="center">
-  Desenvolvido com 🛒 por <a href="https://github.com/jjespeciais00">João Dias</a>
+  Desenvolvido por <a href="https://github.com/jjespeciais00">João Dias</a>
 </div>
