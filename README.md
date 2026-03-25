@@ -10,13 +10,13 @@
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
 </p>
 
-## 📌 Sobre o Projeto
+##  Sobre o Projeto
 
 O **Aguiar Modas** é um e-commerce desenvolvido com foco extremo na velocidade e experiência do usuário (UX). O projeto se destaca por sua arquitetura otimizada, funcionando como uma Single Page Application (SPA) modular, sem o peso de frameworks gigantescos.
 
 O principal fluxo de negócios foca em conversão direta: o checkout do carrinho é integrado de forma inteligente com a API do **WhatsApp**, formatando os pedidos e garantindo que o lojista receba as informações estruturadas imediatamente.
 
-## ✨ Principais Funcionalidades
+##  Principais Funcionalidades
 
 - **Arquitetura SPA Modularizada:** Navegação quase instantânea, sem os refeshs característicos de e-commerces tradicionais.
 - **Renderização Dinâmica (JSON):** Banco de produtos gerado dinamicamente a partir de uma base JSON, facilitando a manutenção e adição de itens de catálogo.
@@ -24,7 +24,7 @@ O principal fluxo de negócios foca em conversão direta: o checkout do carrinho
 - **WhatsApp Checkout:** Geração de link dinâmico com o resumo do pedido e cálculo do montante, abrindo diretamente o app de mensagens do usuário.
 - **SEO & PWA Ready:** Estrutura otimizada para ranqueamento web (SEO) e capacidade de ser instalado como Progressive Web App nos dispositivos mobile.
 
-## 🚀 Como Executar Localmente
+##  Como Executar Localmente
 
 Siga os passos abaixo para rodar o e-commerce localmente:
 
@@ -47,5 +47,5 @@ Abra seu navegador na porta indicada para interagir com a aplicação completa.
 
 ---
 <div align="center">
-  Desenvolvido com 🛒 por <a href="https://github.com/jjespeciais00">João Especiais</a>
+  Desenvolvido com 🛒 por <a href="https://github.com/jjespeciais00">João Dias</a>
 </div>
